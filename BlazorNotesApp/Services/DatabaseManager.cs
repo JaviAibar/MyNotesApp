@@ -11,7 +11,6 @@ namespace BlazorNotesApp.Services
 	public class DatabaseManager : IDatabaseManager
 	{
 		private SqliteConnection dbConnection = new SqliteConnection("Data Source=NotesDatabase.db");
-		
 		public DatabaseManager()
 		{
 			dbConnection.Open();

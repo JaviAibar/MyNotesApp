@@ -29,6 +29,7 @@ namespace BlazorNotesApp.Pages
 			if (!user.Identity.IsAuthenticated) return;
 
 			Notes = db.GetNotesFromUser(int.Parse(user.FindFirst("id").Value)).ToList();
+
 		}
 	}
 }
