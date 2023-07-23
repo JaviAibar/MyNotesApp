@@ -1,0 +1,9 @@
+﻿@using Microsoft.AspNetCore.Components.Authorization
+<AuthorizeView>
+    <Authorized>
+        Welcome @context.User?.Identity?.Name! <MudButton Color="Color.Error" Href="/logout">Log out</MudButton>
+    </Authorized>
+    <NotAuthorized>
+        <MudButton Variant="Variant.Filled" Color="Color.Primary" Href="/login">Log in</MudButton>
+    </NotAuthorized>
+</AuthorizeView>

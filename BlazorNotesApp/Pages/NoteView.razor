@@ -1,0 +1,12 @@
+﻿@page "/Note/{NoteId:int}"
+@using Microsoft.AspNetCore.Mvc;
+
+<MudStack Row=true>
+	<MudTextField T="string" @bind-Value="Name" Label="Name"
+				  Required="true" RequiredError="User name is required!" />
+	<MudButton OnClick="() => OpenDeleteModal()">
+		<MudIcon Icon="@Icons.Material.Filled.Delete" />
+	</MudButton>
+</MudStack>
+<MudTextField T="string" @bind-Value="Content" Immediate=true Label="Outlined" Variant="Variant.Outlined" Lines="10" />
+

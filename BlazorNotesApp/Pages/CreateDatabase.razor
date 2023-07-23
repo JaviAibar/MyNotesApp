@@ -1,0 +1,31 @@
+﻿@page "/CreateDatabase"
+@using BlazorNotesApp.Services;
+<h3>CreateDatabase</h3>
+<MudForm>
+
+	<MudTextField T="string"
+				  Label="Password"
+				  HelperText="Choose a strong password"
+				  @ref="password"
+				  InputType="InputType.Password"
+				  Required="true"
+				  RequiredError="Password is required!" />
+	<MudButton Variant="Variant.Filled" Color="Color.Primary" Class="ml-auto"
+	OnClick="() => PasswordMatch()">Create database</MudButton>
+</MudForm>
+
+@code {
+	[Inject] public IConfiguration config { set; get; }
+	[Inject] public IDatabaseManager database { set; get; }
+	private MudTextField<string> password;
+	private MudForm form;
+
+	private void PasswordMatch()
+	{
+		if (password.Value != config["DatabasePassword"])
+			return;
+		database.CreateDatabase();
+		Console.WriteLine("Everything fine");
+	}
+
+}

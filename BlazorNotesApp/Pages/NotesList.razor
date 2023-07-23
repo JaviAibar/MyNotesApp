@@ -1,0 +1,7 @@
+﻿@using BlazorNotesApp.Model;
+@foreach (var item in @Notes)
+{
+	var hrefinfo = "/Note/" + @item.Id;
+	<MudNavLink Href=@hrefinfo Match="NavLinkMatch.Prefix">@(item.Name ?? "Untitled name")</MudNavLink>
+}
+

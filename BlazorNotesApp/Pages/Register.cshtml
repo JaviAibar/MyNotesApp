@@ -1,0 +1,16 @@
+﻿@page "/register"
+@model BlazorNotesApp.Pages.RegisterModel
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+<form action="" method="post">
+	<div asp-validation-summary="All"></div>
+	<label asp-for="User.Name"><b>Username</b></label>
+	<input type="text" asp-for="User.Name" />
+
+	<label asp-for="User.Pass"><b>Password</b></label>
+	<input type="password" asp-for="User.Pass" />
+
+	<label asp-for="User.Email"><b>Email</b></label>
+	<input type="text" asp-for="User.Email" />
+
+	<button type="submit">Register</button>
+</form>
