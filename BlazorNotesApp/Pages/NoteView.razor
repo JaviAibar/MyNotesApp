@@ -3,7 +3,7 @@
 
 <MudStack Row=true>
 	<MudTextField T="string" @bind-Value="Name" Label="Name"
-				  Required="true" RequiredError="User name is required!" />
+				  Immediate=true />
 	<MudButton OnClick="() => OpenDeleteModal()">
 		<MudIcon Icon="@Icons.Material.Filled.Delete" />
 	</MudButton>

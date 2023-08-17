@@ -2,6 +2,6 @@
 @foreach (var item in @Notes)
 {
 	var hrefinfo = "/Note/" + @item.Id;
-	<MudNavLink Href=@hrefinfo Match="NavLinkMatch.Prefix">@(item.Name ?? "Untitled name")</MudNavLink>
+	<MudNavLink Href=@hrefinfo Match="NavLinkMatch.Prefix">@(string.IsNullOrEmpty(item.Name) ? "Untitled name" : item.Name)</MudNavLink>
 }
 

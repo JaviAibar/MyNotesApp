@@ -1,7 +1,7 @@
 ﻿namespace BlazorNotesApp.Pages
 {
-	public partial class Welcome
-	{
+    public partial class Welcome
+    {
 
-	}
+    }
 }
