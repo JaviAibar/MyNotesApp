@@ -1,6 +1,4 @@
 using BlazorNotesApp.Services;
-using Microsoft.AspNetCore.Components;
-using Microsoft.AspNetCore.Components.Web;
 using MudBlazor;
 using MudBlazor.Services;
 
@@ -10,11 +8,13 @@ builder.Services.AddServerSideBlazor();
 builder.Services.AddMudServices();
 builder.Services.AddSingleton<IDatabaseManager, DatabaseManager>();
 builder.Services.AddSingleton<IDialogService, DialogService>();
+builder.Services.AddSingleton<INotesState, NotesState>();
+builder.Services.AddHttpClient();
 builder.Services.AddAuthentication("loginScheme").AddCookie("loginScheme", opts =>
 {
     opts.LoginPath = "/login";
     opts.LogoutPath = "/logout";
-    opts.AccessDeniedPath = "/accessDenied"; // logeado pero sin permiso
+    opts.AccessDeniedPath = "/accessDenied"; // logged in but without permission
 });
 var app = builder.Build();
 app.UseAuthentication();

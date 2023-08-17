@@ -1,7 +1,7 @@
 ﻿namespace BlazorNotesApp.Services
 {
-	public class LoginService
-	{
+    public class LoginService
+    {
 
-	}
+    }
 }
